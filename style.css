@@ -12,6 +12,7 @@
 
 body {
 	font-family: "Roboto", Arial, Helvetica, sans-serif;
+	color: #303233;
 }
 
 ul {
@@ -190,6 +191,86 @@ a {
 	}
 }
 
+/* CONTENT */
+
 .content {
 	grid-area: content;
+	background-color: #e2e8f0;
+
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		"projects announcements"
+		"projects trending";
+
+	padding: 2rem;
+	gap: 2rem;
+
+	h2 {
+		font-weight: normal;
+		margin-bottom: 1rem;
+	}
+}
+
+.projects {
+	grid-area: projects;
+}
+
+.card-container {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+	.card {
+		background-color: white;
+		padding: 1.5rem;
+		border-radius: 10px;
+		position: relative;
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		height: 180px;
+
+		&::after {
+			content: " ";
+			position: absolute;
+			display: block;
+			background-color: #f0b429;
+			height: 100%;
+			width: 10px;
+			top: 0;
+			left: 0;
+			border-radius: 10px 0 0 10px;
+		}
+
+		h2 {
+			font-weight: bold;
+			font-size: 1.3rem;
+		}
+
+		p {
+			color: rgba(0, 0, 0, 0.6);
+		}
+
+		.buttons {
+			justify-self: end;
+
+			svg {
+				width: 30px;
+				cursor: pointer;
+			}
+
+			svg + svg {
+				margin-left: 0.8rem;
+			}
+		}
+	}
+}
+
+.announcements {
+	grid-area: announcements;
+}
+
+.trending {
+	grid-area: trending;
 }
