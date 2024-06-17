@@ -317,4 +317,38 @@ a {
 
 .trending {
 	grid-area: trending;
+
+	li {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 1fr 1fr;
+		align-items: center;
+		justify-content: center;
+
+		&:not(:last-of-type) {
+			margin-bottom: 1rem;
+		}
+
+		.photo {
+			grid-column: 1 / 2;
+			grid-row: 1 / -1;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+		}
+
+		img {
+			border-radius: 50px;
+			margin-right: 1rem;
+			width: 50px;
+		}
+
+		.username {
+			align-self: self-end;
+		}
+
+		.topic {
+			align-self: self-start;
+		}
+	}
 }
